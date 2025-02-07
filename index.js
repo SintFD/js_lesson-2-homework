@@ -86,8 +86,9 @@ document.getElementById("task_3").addEventListener("click", function () {
 
   while (i < number.length) {
     if (number[a] === number[i + 1]) {
-      finishNumber = finishNumber + number[a];
-      console.log(finishNumber[a], number[a], a, number[i + 1], i);
+      if (!finishNumber.includes(number[a])) {
+        finishNumber = finishNumber + number[a];
+      }
     }
 
     i = i + 1;
