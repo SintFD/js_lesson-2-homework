@@ -217,41 +217,72 @@ document.getElementById("task_7").addEventListener("click", function () {
   }
 });
 
-// 8. Пользователь вводит сумму денег в кошельке и цену одной
-// шоколадки. Программа выводит сколько шоколадок может
-// купить пользователь и сколько сдачи у него останется.
+// 8. Запросить у пользователя длину окружности и периметр
+// квадрата. Определить, может ли такая окружность поме-
+// ститься в указанный квадрат.
 
 document.getElementById("task_8").addEventListener("click", function () {
-  const money = Number(prompt("Сколько у вас денег ???"));
-  const price = Number(prompt("Цена одной шоколадки ???"));
-  const amount = Math.trunc(money / price);
+  const circleLength = Number(prompt("Длина окружности ???"));
+  const squareSide = Number(prompt("Периметр квадрата ???") / 4);
+  const diameter = circleLength / Math.PI;
 
-  alert(
-    `Вы можете купить: ${amount} шоколадки и у вас останется ${
-      money - price * amount
-    } AZN`
-  );
+  if (diameter <= squareSide) {
+    alert("Да может");
+  } else {
+    alert("Нет не может");
+  }
 });
 
 // --------------------------------------------------------------------------------------------------------------------------
 
-// 9. Запросите у пользователя трехзначное число и выведите
-// его задом наперед. Для решения задачи вам понадобится
-// оператор % (остаток от деления).
+// 9. Задать пользователю 3 вопроса, в каждом вопросе по 3 ва-
+// рианта ответа. За каждый правильный ответ начисляется 2
+// балла. После вопросов выведите пользователю количество
+// набранных баллов.
 
 document.getElementById("task_9").addEventListener("click", function () {
-  let i = 0;
-  const number = prompt("Введите число");
-  let turnOver = null;
+  const questionFirstCorrectAnswer = "Эверест";
+  const questionSecondCorrectAnswer = "Фёдор Достоевский";
+  const questionThirdCorrectAnswer = "80";
+  let points = 0;
 
-  while (i < number.length) {
-    i++;
-    turnOver = String(turnOver + Number(number[number.length - i]));
+  document.getElementById("modal").classList.add("modal-show");
+
+  function correctAnswer() {
+    document.getElementById("modal").classList.remove("modal-show");
+
+    const questionFirst = document.querySelector(
+      'input[name="question-first"]:checked'
+    );
+
+    const questionSecond = document.querySelector(
+      'input[name="question-second"]:checked'
+    );
+
+    const questionThird = document.querySelector(
+      'input[name="question-third"]:checked'
+    );
+
+    if (questionFirst?.value === questionFirstCorrectAnswer) {
+      points = points + 2;
+    }
+
+    if (questionSecond?.value === questionSecondCorrectAnswer) {
+      points = points + 2;
+    }
+
+    if (questionThird?.value === questionThirdCorrectAnswer) {
+      points = points + 2;
+    }
+
+    alert(`Вы получили ${points} балла !!!`);
+
+    document
+      .getElementById("submit")
+      .removeEventListener("click", correctAnswer);
   }
 
-  alert(turnOver);
-
-  // alert(`${number[2] + number[1] + number[0]}`);
+  document.getElementById("submit").addEventListener("click", correctAnswer);
 });
 
 // --------------------------------------------------------------------------------------------------------------------------

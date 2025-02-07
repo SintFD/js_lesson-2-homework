@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
     <script src="./index.js" defer></script>
     <style>
       body {
@@ -41,20 +42,77 @@
     ><button id="task_6">
       6. Написать конвертор валют. Пользователь вводит количе- ство USD,
       выбирает, в какую валюту хочет перевести: EUR, UAN или AZN, и получает в
-      ответ соответствующую сумму.</button
-    ><button id="task_7">
+      ответ соответствующую сумму.
+    </button>
+    <button id="task_7">
       7. Запросить у пользователя сумму покупки и вывести сумму к оплате со
       скидкой: от 200 до 300 – скидка будет 3%, от 300 до 500 – 5%, от 500 и
-      выше – 7%.</button
-    ><button id="task_8">
-      8. Пользователь вводит сумму денег в кошельке и цену одной шоколадки.
-      Программа выводит сколько шоколадок может купить пользователь и сколько
-      сдачи у него останется.</button
-    ><button id="task_9">
-      9. Запросите у пользователя трехзначное число и выведите его задом
-      наперед. Для решения задачи вам понадобится оператор % (остаток от
-      деления).</button
-    ><button id="task_10">
+      выше – 7%.
+    </button>
+
+    <button id="task_8">
+      8. Запросить у пользователя длину окружности и периметр квадрата.
+      Определить, может ли такая окружность поместиться в указанный квадрат.
+    </button>
+    <!-- ------------------------------------------------------------------------------- -->
+    <div id="modal" class="modal">
+      <div class="modal__wrapper">
+        <div class="wrapper">
+          <h3>Какая самая высокая гора в мире?</h3>
+          <label
+            ><input type="radio" name="question-first" value="Эверест" />
+            Эверест</label
+          >
+          <label
+            ><input type="radio" name="question-first" value="Килиманджаро" />
+            Килиманджаро</label
+          >
+          <label
+            ><input type="radio" name="question-first" value="Эльбрус" />
+            Эльбрус</label
+          >
+        </div>
+        <div class="wrapper">
+          <h3>Кто написал роман "Преступление и наказание"?</h3>
+          <label
+            ><input type="radio" name="question-second" value="Лев Толстой" />
+            Лев Толстой</label
+          >
+          <label
+            ><input
+              type="radio"
+              name="question-second"
+              value="Фёдор Достоевский"
+            />
+            Фёдор Достоевский
+          </label>
+          <label
+            ><input type="radio" name="question-second" value="Антон Чехов" />
+            Антон Чехов</label
+          >
+        </div>
+        <div class="wrapper">
+          <h3>Какой порт по умолчанию используется для HTTP?</h3>
+          <label
+            ><input type="radio" name="question-third" value="80" /> 80</label
+          >
+          <label
+            ><input type="radio" name="question-third" value="443" /> 443</label
+          >
+          <label
+            ><input type="radio" name="question-third" value="21" /> 21</label
+          >
+        </div>
+        <button id="submit" class="submit">OK</button>
+      </div>
+    </div>
+    <button id="task_9">
+      9. Задать пользователю 3 вопроса, в каждом вопросе по 3 варианта ответа.
+      За каждый правильный ответ начисляется 2 балла. После вопросов выведите
+      пользователю количество набранных баллов.
+    </button>
+    <!-- -------------------------------------------------------------------------------- -->
+    <button id="task_10">
       10. Запросите у пользователя целое число и выведите в ответ, четное число
       или нет. В задании используйте логические операторы. В задании не надо
       использовать if или switch.

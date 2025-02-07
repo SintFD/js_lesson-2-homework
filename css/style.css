@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: grid;
+  gap: 5px;
+  justify-items: start;
+  margin-bottom: 20px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(61, 61, 61, 0.5);
+  margin: -20px;
+}
+
+.modal__wrapper {
+  display: grid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  background: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  text-align: center;
+}
+.submit {
+  justify-self: end;
+}
+
+.modal-show {
+  display: block;
+}
+
+body {
+  padding: 20px;
+}
